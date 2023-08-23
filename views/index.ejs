@@ -13,27 +13,30 @@
 
       <form action="/" method="POST">
         <input type="text" name="nameInput" placeholder="First Name" />
-        <br />
-        <br />
+        <br /><br />
 
         <label for="countries"
           >Select your country for the most accurate results:</label
-        ><br />
+        >
+        <br />
         <select name="country" id="countries">
-          <% for (const countryCode in countries) { %>
           <option value="" disabled selected hidden>Choose a country</option>
+          <% for (const countryCode in countries) { %>
           <option value="<%= countryCode %>">
             <%= countries[countryCode] %>
           </option>
-          <% }; %>
+          <% } %>
         </select>
         <br /><br />
-        <button type="submit">Predict Age</button>
-        <% } %>
-      </form>
 
-      <% if (age !== null) { %>
-      <h1>Your Predicted Age is: <%= age %></h1>
+        <button type="submit">Predict Age</button>
+      </form>
+      <% } else { %>
+      <h1>
+        <% if (age === 'N/A') { %> Age prediction is not available for the
+        selected name and country. <% } else { %> Your Predicted Age is: <%= age
+        %> <% } %>
+      </h1>
       <form action="/" method="GET">
         <button type="submit">Try Again</button>
       </form>

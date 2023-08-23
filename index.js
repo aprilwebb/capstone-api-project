@@ -24,8 +24,12 @@ app.post('/', async (req, res) => {
     const country = req.body['country'];
 
     const result = await axios.get(API_URL + name + '&country_id=' + country);
-
-    res.render('index.ejs', { age: result.data.age, countries: countryData });
+    console.log(result);
+    if (result.data && result.data.age !== null) {
+      res.render('index.ejs', { age: result.data.age, countries: countryData });
+    } else {
+      res.render('index.ejs', { age: 'N/A' });
+    }
   } catch (error) {
     console.log(error.response.data);
     res.status(500);
