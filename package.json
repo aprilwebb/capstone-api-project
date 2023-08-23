@@ -8,6 +8,7 @@
   "name": "capstone-project-api",
   "version": "1.0.0",
   "description": "project using a public api",
+  "type": "module",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
