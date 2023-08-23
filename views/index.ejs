@@ -13,6 +13,21 @@
 
       <form action="/" method="POST">
         <input type="text" name="nameInput" placeholder="First Name" />
+        <br />
+        <br />
+
+        <label for="countries"
+          >Select your country for the most accurate results:</label
+        ><br />
+        <select name="country" id="countries">
+          <% for (const countryCode in countries) { %>
+          <option value="" disabled selected hidden>Choose a country</option>
+          <option value="<%= countryCode %>">
+            <%= countries[countryCode] %>
+          </option>
+          <% }; %>
+        </select>
+        <br /><br />
         <button type="submit">Predict Age</button>
         <% } %>
       </form>
