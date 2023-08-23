@@ -23,7 +23,7 @@ app.post('/', async (req, res) => {
     const name = req.body['nameInput'];
     const country = req.body['country'];
 
-    const result = await axios.get(API_URL + name);
+    const result = await axios.get(API_URL + name + '&country_id=' + country);
 
     res.render('index.ejs', { age: result.data.age, countries: countryData });
   } catch (error) {
