@@ -1,15 +1,16 @@
 body,
 html {
   height: 100%;
-  margin-top: 15px;
+  margin-top: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
 }
 
 body {
   background-image: url('../images/pineapple.avif');
-  background-position: center;
+  background-position: bottom center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .predict {
